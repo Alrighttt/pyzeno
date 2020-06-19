@@ -27,7 +27,7 @@ class ZenoMonitorNode(ZenoReactor):
         else:
             if not keep_data:
                 del evt['data']
-            evt['pid'] = pid
+            evt['pid'] = pid.hex()
             if pid == PEER_CONTROLLER_PID:
                 evt['peer_event'] = self.decode_peer_event(data[16:], evt)
             else:

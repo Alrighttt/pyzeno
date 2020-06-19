@@ -132,7 +132,7 @@ class FixedBufCodec:
         self.size = size
 
     def decode(self, parser):
-        return parser.take(self.size)
+        return parser.take(self.size).hex()
 
     def encode(self, buf):
         return buf
