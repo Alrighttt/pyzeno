@@ -73,7 +73,7 @@ class EthToKmdStepCodec(RoundCodec):
             def decode(self, parser):
                 (length,) = parser.unpack(">B")
                 assert length < 250, "TODO: implement varint"
-                return parser.take(length)
+                return parser.take(length).hex()
 
             def encode(self, script):
                 length = len(script)
